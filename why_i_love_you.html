@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why I Love You ❤️</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Georgia,"Times New Roman",serif;
+  background:linear-gradient(135deg,#120914,#2b1020,#160d25);
+  color:#fff;min-height:100vh;overflow-x:hidden
+}
+.hearts span{position:fixed;bottom:-40px;color:#ff7aa8;opacity:.5;animation:float 9s linear infinite;z-index:0;font-size:24px}
+.hearts span:nth-child(1){left:8%;animation-delay:0s}.hearts span:nth-child(2){left:23%;animation-delay:2s}
+.hearts span:nth-child(3){left:42%;animation-delay:5s}.hearts span:nth-child(4){left:65%;animation-delay:1s}
+.hearts span:nth-child(5){left:82%;animation-delay:4s}
+@keyframes float{0%{transform:translateY(0) rotate(0);opacity:0}15%{opacity:.6}100%{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;position:relative;z-index:1}
+.card{width:min(850px,94vw);padding:48px 25px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);backdrop-filter:blur(12px);border-radius:30px;box-shadow:0 20px 70px rgba(0,0,0,.4)}
+.small{letter-spacing:4px;text-transform:uppercase;color:#ff9abb;font-size:13px}
+h1{font-size:clamp(48px,10vw,90px);margin:15px 0 10px;line-height:1}
+.subtitle{font-size:20px;color:#f8dbe5;line-height:1.6}
+.btn,.answer{
+  margin-top:20px;padding:14px 24px;border:0;border-radius:999px;background:#ff5d91;color:white;
+  font-size:16px;cursor:pointer;box-shadow:0 10px 30px rgba(255,93,145,.25);transition:.25s
+}
+.btn:hover,.answer:hover{transform:translateY(-2px)}
+section{position:relative;z-index:1;padding:70px 20px}
+.section-title{text-align:center;font-size:38px;margin-bottom:35px}
+.grid{width:min(1050px,94vw);margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.reason{padding:27px;border-radius:22px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);transition:.3s}
+.reason:hover{transform:translateY(-7px);background:rgba(255,255,255,.12)}
+.number{font-size:30px;color:#ff82a9}.reason h3{margin:12px 0 8px;font-size:21px}.reason p{color:#ead7df;line-height:1.6}
+.letter{width:min(760px,94vw);margin:auto;background:#fff8fb;color:#381b29;padding:40px;border-radius:22px;box-shadow:0 20px 60px rgba(0,0,0,.3);line-height:1.8;font-size:18px}
+.signature{text-align:right;margin-top:25px;font-style:italic;color:#a33b61}
+
+.interactive{
+  width:min(760px,94vw);margin:auto;padding:34px 25px;text-align:center;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);
+  border-radius:28px
+}
+.question{font-size:28px;margin:10px auto 8px}.hint{color:#e8cbd6;margin-bottom:15px}
+.answers{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.answer{min-width:130px;margin-top:10px}
+.answer.no{background:#6f5060}
+.response{min-height:50px;margin-top:22px;font-size:19px;color:#ffd1df;line-height:1.5}
+.progress{margin:20px auto 0;width:min(420px,90%);height:7px;background:rgba(255,255,255,.13);border-radius:10px;overflow:hidden}
+.progress-bar{height:100%;width:0;background:#ff6f9e;transition:.5s}
+
+#secret{display:none}
+.secret-box{width:min(700px,94vw);margin:auto;text-align:center;padding:35px;border-radius:28px;background:linear-gradient(145deg,rgba(255,93,145,.18),rgba(255,255,255,.07));border:1px solid rgba(255,255,255,.15)}
+.big-heart{font-size:70px;animation:pulse 1.5s infinite}
+@keyframes pulse{50%{transform:scale(1.15)}}
+footer{text-align:center;padding:50px 20px;color:#d9b9c5;position:relative;z-index:1}
+.pop{position:fixed;pointer-events:none;font-size:30px;z-index:20;animation:pop 1.1s ease-out forwards}
+@keyframes pop{0%{transform:translate(-50%,-50%) scale(.5);opacity:1}100%{transform:translate(-50%,-180px) scale(1.5);opacity:0}}
+</style>
+</head>
+<body>
+
+<div class="hearts"><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span></div>
+
+<header class="hero">
+  <div class="card">
+    <div class="small">A little website made just for you</div>
+    <h1>Why I Love You ❤️</h1>
+    <p class="subtitle">Because somehow, out of everyone in this world,<br>my heart found you.</p>
+    <button class="btn" id="startBtn">Start our little journey ✨</button>
+  </div>
+</header>
+
+<section id="reasons">
+  <h2 class="section-title">Reasons I Love You</h2>
+  <div class="grid">
+    <div class="reason"><div class="number">01</div><h3>Your Smile</h3><p>Your smile has a way of making even an ordinary day feel special.</p></div>
+    <div class="reason"><div class="number">02</div><h3>Your Heart</h3><p>I love how caring, kind, and genuine you are with the people you love.</p></div>
+    <div class="reason"><div class="number">03</div><h3>You Make Me Happy</h3><p>Even the smallest moments with you become memories I want to keep forever.</p></div>
+    <div class="reason"><div class="number">04</div><h3>I Can Be Myself</h3><p>With you, I never feel like I have to pretend to be someone I'm not.</p></div>
+    <div class="reason"><div class="number">05</div><h3>The Little Things</h3><p>Your messages, your laugh, your silly moments, and all the tiny things you do.</p></div>
+    <div class="reason"><div class="number">06</div><h3>You're You</h3><p>There isn't one single reason. I love you because you're simply you.</p></div>
+  </div>
+</section>
+
+<section id="questions">
+  <h2 class="section-title">Okay... now I have questions 👀</h2>
+  <div class="interactive">
+    <div class="question" id="question">Do you really love me? ❤️</div>
+    <div class="hint" id="hint">Be honest... there is only one correct answer 😌</div>
+    <div class="answers">
+      <button class="answer" data-answer="yes">YES ❤️</button>
+      <button class="answer no" data-answer="no">No 😭</button>
+    </div>
+    <div class="response" id="response" aria-live="polite"></div>
+    <div class="progress"><div class="progress-bar" id="progress"></div></div>
+  </div>
+</section>
+
+<section id="secret">
+  <div class="secret-box">
+    <div class="big-heart">💗</div>
+    <h2 class="section-title">You passed the love test.</h2>
+    <p style="font-size:19px;line-height:1.7;color:#f1d7e1">
+      But honestly, I already knew the answer.<br>
+      I just wanted an excuse to tell you one more time...
+      <br><strong style="color:#ff9abb">I love you more than words can explain. ❤️</strong>
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">A Letter For You 💌</h2>
+  <div class="letter">
+    <p>My love,</p>
+    <p>I could write a thousand reasons for loving you and still feel like I haven't said enough. You have become such a beautiful part of my life, and I'm grateful for every laugh, every conversation, every memory, and every little moment we share.</p>
+    <p>I don't love you only for the big moments. I love the ordinary moments too. I love knowing that somewhere in this huge world, there is someone who makes my days brighter just by being there.</p>
+    <p>Thank you for being you. I hope this little website reminds you that you are loved, appreciated, and incredibly special to me.</p>
+    <div class="signature">Forever yours ❤️</div>
+  </div>
+</section>
+
+<footer>
+  <div class="big-heart">♥</div>
+  <p>Made with love, just for you.</p>
+</footer>
+
+<script>
+(() => {
+  const root = document.body;
+  const questions = [
+    ["Do you really love me? ❤️","Be honest... there is only one correct answer 😌"],
+    ["Are you my baby? 🥺❤️","I hope you know the answer."],
+    ["Can I love you forever? 💕","Just one little promise."],
+    ["Can I call you my wife? 💍❤️","Okay... this one is special."],
+    ["Do you miss me when we don’t talk? 🥹","Tell the truth."],
+    ["Are you forever mine? ❤️","Last question... make it count."]
+  ];
+  let index = 0;
+
+  const startBtn = document.getElementById("startBtn");
+  const question = document.getElementById("question");
+  const hint = document.getElementById("hint");
+  const response = document.getElementById("response");
+  const progress = document.getElementById("progress");
+  const secret = document.getElementById("secret");
+
+  function popHearts() {
+    for(let i=0;i<12;i++){
+      const h=document.createElement("div");
+      h.className="pop";
+      h.textContent=["❤️","💕","💗","💖"][Math.floor(Math.random()*4)];
+      h.style.left=(20+Math.random()*60)+"%";
+      h.style.top=(35+Math.random()*25)+"%";
+      h.style.animationDelay=(Math.random()*0.3)+"s";
+      root.appendChild(h);
+      setTimeout(()=>h.remove(),1300);
+    }
+  }
+
+  startBtn.addEventListener("click",()=>{
+    document.getElementById("questions").scrollIntoView({behavior:"smooth"});
+  });
+
+  document.querySelectorAll(".answer").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      const answer=btn.dataset.answer;
+      if(answer==="no"){
+        response.textContent="Hmm... I think you clicked the wrong button 😭❤️ Try again.";
+        btn.animate([{transform:"translateX(-5px)"},{transform:"translateX(5px)"},{transform:"translateX(0)"}],{duration:250});
+        return;
+      }
+
+      popHearts();
+      if(index < questions.length-1){
+        response.textContent=[
+          "I knew it! 🥰",
+          "Awww... that makes me smile. ❤️",
+          "Then I'll treasure every moment. 💕",
+          "That sounds pretty special. 💍❤️",
+          "Now I miss you too. 🥹❤️"
+        ][index];
+        index++;
+        setTimeout(()=>{
+          question.textContent=questions[index][0];
+          hint.textContent=questions[index][1];
+          progress.style.width=((index)/(questions.length-1)*100)+"%";
+          response.textContent="";
+        },650);
+      }else{
+        progress.style.width="100%";
+        response.textContent="All correct. My heart is officially yours. ❤️";
+        secret.style.display="block";
+        setTimeout(()=>secret.scrollIntoView({behavior:"smooth"}),700);
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
